@@ -23,8 +23,8 @@
         }
 
         body {
-            background: rgb(3,3,5);
-background: linear-gradient(22deg, rgba(3,3,5,1) 0%, rgba(18,18,40,1) 44%, rgba(22,22,22,1) 95%);
+            background: rgb(3, 3, 5);
+            background: linear-gradient(22deg, rgba(3, 3, 5, 1) 0%, rgba(18, 18, 40, 1) 44%, rgba(22, 22, 22, 1) 95%);
             color: #c5c5c5;
         }
 
@@ -280,7 +280,6 @@ background: linear-gradient(22deg, rgba(3,3,5,1) 0%, rgba(18,18,40,1) 44%, rgba(
 
     icons.forEach(function (elemento, index) {
         elemento.addEventListener('mouseover', function () {
-            // Remove the 'upscale' class from all elements
             icons.forEach(function (el) {
                 el.classList.remove('upscale');
                 el.classList.remove('semBefore');
@@ -296,7 +295,6 @@ background: linear-gradient(22deg, rgba(3,3,5,1) 0%, rgba(18,18,40,1) 44%, rgba(
                 botao.classList.add('display');
             });
 
-            // Add the 'upscale' class to the current element
             this.classList.add('upscale');
             this.classList.add('semBefore');
             aside.style.backgroundImage = 'url(' + imagens[index] + ')'
@@ -304,7 +302,6 @@ background: linear-gradient(22deg, rgba(3,3,5,1) 0%, rgba(18,18,40,1) 44%, rgba(
         });
     });
 
-    // Array de imagens
     var imagens = [
         './images/mario-jump-card.png',
     ];
