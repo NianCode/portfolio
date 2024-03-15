@@ -15,7 +15,9 @@
         }
 
         nav {
-            background-color: rgb(5, 5, 17);
+            border-bottom: #a5a5a54d 1px solid;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.438);
+            background-color: rgba(12, 4, 24, 0.555);
         }
 
         nav a {
@@ -26,18 +28,28 @@
             background: rgb(3, 3, 5);
             background: linear-gradient(22deg, rgba(3, 3, 5, 1) 0%, rgba(18, 18, 40, 1) 44%, rgba(22, 22, 22, 1) 95%);
             color: #c5c5c5;
+            background-image: url(./images/background.jpg);
+            background-size: cover;
+            background-position: center;
         }
 
-        #home {
-            background-color: #ffffff;
-            height: 400px;
-            background-image: url(./images/background.jpeg);
-            background-size: cover;
+        #sobre {
+            height: 560px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #sobre>.container {
             height: 190px;
             margin: 50px auto;
+            text-align: center;
+        }
+
+        #sobre h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: rgb(139, 107, 224);
         }
 
         #projetos {
@@ -129,12 +141,11 @@
         }
 
         #habilidades {
-            background-color: #ee4141;
             height: 500px;
         }
 
         #contato {
-            background-color: #e4e4e4;
+            background-color: #000000;
         }
 
         .upscale {
@@ -165,9 +176,6 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#sobre">About</a>
                 </li>
                 <li class="nav-item">
@@ -183,11 +191,6 @@
         </div>
 
     </nav>
-
-    <section id="home">
-        <!-- Content of Home section -->
-    </section>
-
     <section id="sobre">
         <div class="container">
             <div class="row">
