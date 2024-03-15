@@ -16,15 +16,25 @@
 
         nav {
             border-bottom: #a5a5a54d 1px solid;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.438);
-            background-color: rgba(12, 4, 24, 0.555);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.432);
+            transition: background-color 0.5s ease;
         }
 
-        nav a {
-            color: #c5c5c5;
+        .navbar-brand {
+            width: 140px;
+            height: 45px;
+            background-image: url(./images/nian-code.png);
+            background-size: cover;
+            background-position: center;
+            margin-right: 0px;
+        }
+
+        .navbar.solid {
+            background-color: #040014fa;
         }
 
         body {
+            padding-top: 70px;
             background: rgb(3, 3, 5);
             background: linear-gradient(22deg, rgba(3, 3, 5, 1) 0%, rgba(18, 18, 40, 1) 44%, rgba(22, 22, 22, 1) 95%);
             color: #c5c5c5;
@@ -49,7 +59,8 @@
         #sobre h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: rgb(139, 107, 224);
+            color: rgb(156, 135, 212);
+            text-shadow: #ffffff6e 0px 0px 10px;
         }
 
         #projetos {
@@ -164,9 +175,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg ">
-
-        <a class="navbar-brand" href="#">NC</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-* fixed-top">
+        <a class="navbar-brand" href="#"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -197,11 +207,15 @@
                 <div class="col">
                     <h1>Behind the Screen: A NianCode Web Journey</h1>
                     <p>
-                        
-                        Hello, I'm Nicolas, a self-taught web developer passionate about exploring and learning new technologies on my own. 
-                        My enthusiasm for the development field has led me to primarily focus on front-end, while also gaining some experience 
-                        in back-end with Node.js and C#. I spend my time crafting interactive and visually appealing projects, constantly striving 
-                        to enhance my skills and create captivating experiences for users. I'm determined to expand my knowledge and contribute to 
+
+                        Hello, I'm Nicolas, a self-taught web developer passionate about exploring and learning new
+                        technologies on my own.
+                        My enthusiasm for the development field has led me to primarily focus on front-end, while also
+                        gaining some experience
+                        in back-end with Node.js and C#. I spend my time crafting interactive and visually appealing
+                        projects, constantly striving
+                        to enhance my skills and create captivating experiences for users. I'm determined to expand my
+                        knowledge and contribute to
                         the ongoing advancement of web development.
                     </p>
                 </div>
@@ -310,6 +324,14 @@
         './images/mario-jump-card.png',
     ];
 
+    window.onscroll = function () {
+        var navbar = document.querySelector('.navbar');
+        if (window.pageYOffset > 50) { /* Defina a quantidade de scroll aqui */
+            navbar.classList.add('solid');
+        } else {
+            navbar.classList.remove('solid');
+        }
+    };
 </script>
 
 </html>
