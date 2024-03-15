@@ -6,7 +6,7 @@ var data = {
             imagemIcon: './images/projects/mario-jump-icon.png',
             imagemCard: './images/projects/mario-jump-card.png',
             linkGitHub: 'https://github.com/NianCode/mario-jump',
-            linkPreview: 'https://nian-code.web.app/'
+            linkPreview: 'https://nian-code.web.app/mariojump'
         },
         {
             nome: 'Rough Bot',
