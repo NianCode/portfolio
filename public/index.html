@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            border-bottom: #a5a5a54d 1px solid;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.432);
+            transition: background-color 0.5s ease;
+        }
+
+        .navbar-brand {
+            width: 140px;
+            height: 45px;
+            background-image: url(./images/nian-code.png);
+            background-size: cover;
+            background-position: center;
+            margin-right: 0px;
+        }
+
+        .navbar.solid {
+            /* From https://css.glass */
+            background: rgba(12, 1, 19, 0.87);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        body {
+            padding-top: 70px;
+            background: rgb(3, 3, 5);
+            background: linear-gradient(22deg, rgba(3, 3, 5, 1) 0%, rgba(18, 18, 40, 1) 44%, rgba(22, 22, 22, 1) 95%);
+            color: #c5c5c5;
+            background-image: url(./images/background.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #sobre {
+            height: 560px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #sobre .container {
+            height: 190px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #sobre h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: rgb(156, 135, 212);
+            text-shadow: #ffffff6e 0px 0px 10px;
+        }
+
+        #projetos {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .containerProjetos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 980px;
+        }
+
+        .pItens {
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background-color: #ffffff;
+            height: 200px;
+            width: 200px;
+            margin: 20px;
+            border-radius: 6px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .pItens:hover {
+            box-shadow: 0 0 20px rgba(230, 230, 230, 0.377);
+        }
+
+        .pItens::before {
+            content: '';
+            border-radius: 6px;
+            color: white;
+            font: 20px 'Arial';
+            line-height: 200px;
+            text-align: center;
+            position: relative;
+            top: 0px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 200px;
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.589);
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .pItens.semBefore::before {
+            opacity: 0;
+            display: none;
+        }
+
+        .btnItens {
+            position: relative;
+            color: rgb(201, 201, 201);
+            text-decoration: none;
+            background-color: rgb(27, 96, 245);
+            border-style: none;
+            box-shadow: 0 0px 20px rgba(0, 0, 0, 0.438);
+            border-radius: 0px;
+            margin: 10px;
+            padding: 3px 10px;
+            height: 30px;
+            display: none;
+        }
+
+        .btnItens:hover {
+            background-color: rgb(27, 96, 245);
+            color: white;
+            text-decoration: none;
+        }
+
+        aside {
+            height: 450px;
+            width: 300px;
+            background-size: cover;
+
+            /* From https://css.glass */
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.247);
+            backdrop-filter: blur(1.7px);
+            -webkit-backdrop-filter: blur(1.7px);
+            border: 1px solid rgba(206, 206, 206, 0.31);
+        }
+
+        #habilidades {
+            height: 500px;
+        }
+
+        #contato {
+            background-color: #000000;
+        }
+
+        .upscale {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .display {
+            display: block;
+        }
+
+        .noDisplay {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-* fixed-top">
+        <a class="navbar-brand" href="#"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobre">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projetos">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#habilidades">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <section id="sobre">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Behind the Screen: A NianCode Web Journey</h1>
+                    <p>
+
+                        Hello, I'm Nicolas, a self-taught web developer passionate about exploring and learning new
+                        technologies on my own.
+                        My enthusiasm for the development field has led me to primarily focus on front-end, while also
+                        gaining some experience
+                        in back-end with Node.js and C#. I spend my time crafting interactive and visually appealing
+                        projects, constantly striving
+                        to enhance my skills and create captivating experiences for users.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <div class="containerProjetos">
+        </div>
+        <aside data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-reverse="true" data-tilt-reset="false"
+            data-tilt-full-page-listening data-tilt-max="15" ata-tilt data-tilt-startX="-40" data-tilt-startY="-50">
+        </aside>
+    </section>
+
+    <section id="habilidades">
+        <!-- Content of Skills section -->
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Contact information</p>
+                    <!-- Add your contact details here -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>&copy; 2022 NianCode</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="projects.js"></script>
+    <script type="text/javascript" src="./vanilla-tilt/dist/vanilla-tilt.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
