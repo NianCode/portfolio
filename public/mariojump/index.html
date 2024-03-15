@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Jump</title>
+    <link rel="stylesheet" type="text/css" href="./style.css?v=0001">
+</head>
+
+<body>
+    <!-- written by NianCode.
+    pt-br: escrito por NianCode. 
+
+    Email: nicolash.contato@gmail.com -->
+    <div class="niancodeLogo">
+    </div>
+    <div class="themeContainer">
+        <div class="themes" id="darkTheme" onclick="setTheme(0)">
+        </div>
+        <div class="themes" id="lightTheme" onclick="setTheme(1)">
+        </div>
+        <div class="themes" id="marioTheme" onclick="setTheme(2)">
+        </div>
+    </div>
+    <!-- Header container -->
+    <header>
+    </header>
+    <!-- Base container for the game -->
+    <div class="base">
+        <section>
+
+            <div class="chao"></div>
+
+            <!-- Game container -->
+            <div class="cotainerJogo">
+
+                <!-- Enemy hitbox -->
+                <div class="hitboxInimigo">
+                    <img src="./imagens/inimigo/cano.png" draggable="false" class="inimigo">
+                </div>
+
+                <!-- Mario hitbox -->
+                <div class="hitboxMario">
+                    <img src="./imagens/personagem/mario.gif" draggable="false" class="mario">
+                </div>
+
+                <!-- Points counter -->
+                <div class="pontos">
+                    0000
+                </div>
+
+                <!-- Cloud images -->
+                <img src="./imagens/cenario/nuvens.webp" draggable="false" class="nuvens" id="nuvens1">
+                <img src="./imagens/cenario/nuvens.webp" draggable="false" class="nuvens" id="nuvens2">
+            </div>
+
+        </section>
+
+        <!-- Menu and ranking container -->
+        <div class="container">
+
+            <!-- Menu section -->
+            <div class="menu">
+
+                <!-- Points label -->
+                <label class="lblPontosMenu">Pontos</label>
+                <!-- Points counter in the menu -->
+                <div class="pontosMenu">0000</div>
+                <!-- Restart button -->
+                <div class="btnRestart">
+                    RESTART
+                </div>
+
+            </div>
+
+            <!-- Ranking section -->
+            <div class="containerRanking">
+
+                <!-- Ranking label -->
+                <label class="lblRankingBox">Ranking</label>
+                <!-- Ranking box -->
+                <div class="rankingBox">
+                    <div class="tableRankingContainer">
+                        <table id="ranking"></table>
+                    </div>
+                </div>
+                <input type="text" id="playerName" placeholder="Enter your name">
+                <button id="saveButton">Save</button>
+
+            </div>
+        </div>
+
+
+        <footer></footer>
+</body>
+
+<!-- Link to JavaScript file -->
+<script type="module" src="script.js?v=0003"></script>
+
+
+</html>
