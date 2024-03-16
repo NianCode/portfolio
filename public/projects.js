@@ -6,14 +6,17 @@ var data = {
             imagemIcon: './images/projects/mario-jump-icon.png',
             imagemCard: './images/projects/mario-jump-card.png',
             linkGitHub: 'https://github.com/NianCode/mario-jump',
-            linkPreview: 'https://nian-code.web.app/mariojump'
+            linkPreview: 'https://nian-code.web.app/mariojump',
+            skills: ['fab fa-html5', 'fab fa-css3-alt', 'fab fa-js-square', 'fas fa-database', 'fas fa-server']
+
         },
         {
             nome: 'Rough Bot',
             imagemIcon: './images/projects/rough-bot-icon.png',
             imagemCard: './images/projects/rough-bot-card.png',
             linkGitHub: 'https://github.com/NianCode/rough-bot',
-            linkPreview: 'https://github.com/NianCode/rough-bot'
+            linkPreview: 'https://github.com/NianCode/rough-bot',
+            skills: ['fab fa-js-square', 'fab fa-node', 'fab fa-discord', 'fas fa-cogs']
         }
     ]
 };
@@ -36,6 +39,7 @@ for (var i = 0; i < data.quantidade; i++) {
     // Cria o elemento para o nome
     var nomeElement = document.createElement('div');
     var nome = data.itens[i] && data.itens[i].nome ? data.itens[i].nome : `...`;
+
     nomeElement.textContent = nome; // Adiciona o nome ao elemento .pItens
     item.appendChild(nomeElement); // Adiciona o nome ao item
 
@@ -51,9 +55,28 @@ for (var i = 0; i < data.quantidade; i++) {
     btnGitHub.classList.add('btnItens');
     btnGitHub.textContent = 'GitHub';
 
-    // Adiciona os botões ao item
-    item.appendChild(btnPreview);
-    item.appendChild(btnGitHub);
+    var iconDiv = document.createElement('div');
+    iconDiv.classList.add('iconDiv');
+
+    if(data.itens[i] && data.itens[i].skills){
+        data.itens[i].skills.forEach(function (skill) {
+            var icon = document.createElement('i');
+            var classes = skill.split(' ');
+            icon.classList.add(classes[0], classes[1]); // Adiciona o ícone Font Awesome
+
+            iconDiv.appendChild(icon);
+        });
+    }
+    
+    item.appendChild(iconDiv);
+
+    var btnDiv = document.createElement('div');
+    btnDiv.classList.add('btnDiv');
+
+    item.appendChild(btnDiv);
+    
+    btnDiv.appendChild(btnPreview);
+    btnDiv.appendChild(btnGitHub);
 
     // Se o link de preview existir, adiciona o link ao botão
     if (data.itens[i] && data.itens[i].linkPreview) {
