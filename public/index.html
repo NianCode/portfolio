@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         /* Add custom styles here */
@@ -12,6 +14,15 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE/Edge */
+            user-select: none;
+            /* Standard */
         }
 
         nav {
@@ -74,86 +85,7 @@
             padding: 80px 0;
         }
 
-        .containerProjetos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 980px;
-        }
-
-        .pItens {
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            background-color: #ffffff;
-            height: 200px;
-            width: 200px;
-            margin: 20px;
-            border-radius: 6px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .pItens:hover {
-            box-shadow: 0 0 20px rgba(230, 230, 230, 0.377);
-        }
-
-        .pItens::before {
-            content: '';
-            border-radius: 6px;
-            color: white;
-            font: 20px 'Arial';
-            line-height: 200px;
-            text-align: center;
-            position: relative;
-            top: 0px;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            height: 200px;
-            width: 200px;
-            background-color: rgba(0, 0, 0, 0.589);
-            opacity: 1;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .pItens.semBefore::before {
-            opacity: 0;
-            display: none;
-        }
-
-        .btnItens {
-            position: relative;
-            color: rgb(201, 201, 201);
-            text-decoration: none;
-            background-color: rgb(27, 96, 245);
-            border-style: none;
-            box-shadow: 0 0px 20px rgba(0, 0, 0, 0.438);
-            border-radius: 0px;
-            margin: 10px;
-            padding: 3px 10px;
-            height: 30px;
-            display: none;
-        }
-
-        .btnItens:hover {
-            background-color: rgb(27, 96, 245);
-            color: white;
-            text-decoration: none;
-        }
-
-        aside {
-            height: 450px;
-            width: 300px;
-            background-size: cover;
-
-            /* From https://css.glass */
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.247);
-            backdrop-filter: blur(1.7px);
-            -webkit-backdrop-filter: blur(1.7px);
-            border: 1px solid rgba(206, 206, 206, 0.31);
-        }
+     
 
         #habilidades {
             height: 500px;
@@ -225,9 +157,9 @@
     </section>
 
     <section id="projetos">
-        <div class="containerProjetos">
-        </div>
-        <aside data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-reverse="true" data-tilt-reset="false"
+        <div class="containerProjetos"></div>
+
+        <aside data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-reverse="true" data-tilt-reset="false"
             data-tilt-full-page-listening data-tilt-max="15" ata-tilt data-tilt-startX="-40" data-tilt-startY="-50">
         </aside>
     </section>

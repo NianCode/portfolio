@@ -1,5 +1,5 @@
 var data = {
-    quantidade: 8,
+    quantidade: 6,
     itens: [
         {
             nome: 'Mario Jump',
@@ -33,10 +33,11 @@ for (var i = 0; i < data.quantidade; i++) {
     var item = document.createElement('div');
     item.classList.add('pItens');
 
-    // Usa a imagem do item se ela existir, caso contrário usa uma imagem padrão
-    if (data.itens[i] && data.itens[i].imagemIcon) {
-        item.style.backgroundImage = 'url(' + data.itens[i].imagemIcon + ')';
-    }
+    // Cria o elemento para o nome
+    var nomeElement = document.createElement('div');
+    var nome = data.itens[i] && data.itens[i].nome ? data.itens[i].nome : `...`;
+    nomeElement.textContent = nome; // Adiciona o nome ao elemento .pItens
+    item.appendChild(nomeElement); // Adiciona o nome ao item
 
     // Cria o botão de preview
     var btnPreview = document.createElement('button');
@@ -49,7 +50,6 @@ for (var i = 0; i < data.quantidade; i++) {
     btnGitHub.type = 'button';
     btnGitHub.classList.add('btnItens');
     btnGitHub.textContent = 'GitHub';
-
 
     // Adiciona os botões ao item
     item.appendChild(btnPreview);
@@ -68,17 +68,18 @@ for (var i = 0; i < data.quantidade; i++) {
     // Adiciona o item ao container
     containerProjetos.appendChild(item);
 
-    // Adiciona o nome ao ::before do item
-    var style = document.createElement('style');
-    var nome = data.itens[i] && data.itens[i].nome ? data.itens[i].nome : `...`;
-    style.innerHTML = `
-    .pItens:nth-child(${i + 1})::before {
-        content: "${nome}";
-    }
-`;
-    document.head.appendChild(style);
-
     item.addEventListener('mouseover', createMouseoverHandler(i));
+
+    var style = document.createElement('style');
+
+    if (data.itens[i] && data.itens[i].imagemIcon) {
+        style.innerHTML = `
+        .pItens:nth-child(${i + 1})::before {
+            background-image: url(${data.itens[i].imagemIcon});
+        }
+        `;
+        document.head.appendChild(style);
+    }
 }
 
 function createClickHandler(link) {
@@ -89,36 +90,13 @@ function createClickHandler(link) {
 
 function createMouseoverHandler(i) {
     return function () {
-        // Remove as classes 'upscale' e 'semBefore' de todos os itens
-        var allItems = document.querySelectorAll('.pItens');
-        allItems.forEach(function (el) {
-            el.classList.remove('upscale');
-            el.classList.remove('semBefore');
-        });
-
-        // Remove a classe 'display' e adiciona a classe 'noDisplay' a todos os botões
-        var allButtons = document.querySelectorAll('.btnItens');
-        allButtons.forEach(function (botao) {
-            botao.classList.remove('display');
-            botao.classList.add('noDisplay');
-        });
-
-        // Adiciona a classe 'display' e remove a classe 'noDisplay' dos botões deste item
-        var thisButtons = this.querySelectorAll('.btnItens');
-        thisButtons.forEach(function (botao) {
-            botao.classList.remove('noDisplay');
-            botao.classList.add('display');
-        });
-
-        // Adiciona as classes 'upscale' e 'semBefore' a este item
-        this.classList.add('upscale');
-        this.classList.add('semBefore');
-
         // Se a imagem do card existe, define a imagem de fundo do elemento aside
         if (data.itens[i] && data.itens[i].imagemCard) {
             aside.style.backgroundImage = 'url(' + data.itens[i].imagemCard + ')';
         } else {
             aside.style.backgroundImage = '';
         }
+
+        document.head.appendChild(style);
     };
 }
