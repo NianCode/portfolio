@@ -1,5 +1,5 @@
 var data = {
-    quantidade: 6,
+    quantidade: 9,
     itens: [
         {
             nome: 'Mario Jump',
@@ -15,15 +15,17 @@ var data = {
             imagemIcon: './images/projects/rough-bot-icon.png',
             imagemCard: './images/projects/rough-bot-card.png',
             linkGitHub: 'https://github.com/NianCode/rough-bot',
-            linkPreview: 'https://github.com/NianCode/rough-bot',
             skills: ['fab fa-js-square', 'fab fa-node', 'fab fa-discord', 'fas fa-cogs']
+        },
+        {
+            nome: 'Nian Code',
+            imagemIcon: './images/nian-code.png',
+            imagemCard: './images/projects/mario-jump-card.png',
         }
     ]
 };
 
 var aside = document.querySelector('aside');
-var icons = document.querySelectorAll('.pItens');
-var btnIcons = document.querySelectorAll('.btnItens');
 var containerProjetos = document.querySelector('.containerProjetos');
 
 //  //
@@ -43,22 +45,11 @@ for (var i = 0; i < data.quantidade; i++) {
     nomeElement.textContent = nome; // Adiciona o nome ao elemento .pItens
     item.appendChild(nomeElement); // Adiciona o nome ao item
 
-    // Cria o botão de preview
-    var btnPreview = document.createElement('button');
-    btnPreview.type = 'button';
-    btnPreview.classList.add('btnItens');
-    btnPreview.textContent = 'Preview';
-
-    // Cria o botão de GitHub
-    var btnGitHub = document.createElement('button');
-    btnGitHub.type = 'button';
-    btnGitHub.classList.add('btnItens');
-    btnGitHub.textContent = 'GitHub';
 
     var iconDiv = document.createElement('div');
     iconDiv.classList.add('iconDiv');
 
-    if(data.itens[i] && data.itens[i].skills){
+    if (data.itens[i] && data.itens[i].skills) {
         data.itens[i].skills.forEach(function (skill) {
             var icon = document.createElement('i');
             var classes = skill.split(' ');
@@ -67,24 +58,35 @@ for (var i = 0; i < data.quantidade; i++) {
             iconDiv.appendChild(icon);
         });
     }
-    
+
     item.appendChild(iconDiv);
 
     var btnDiv = document.createElement('div');
     btnDiv.classList.add('btnDiv');
 
+    var btnPreview = document.createElement('button');
+    btnPreview.type = 'button';
+    btnPreview.classList.add('btnItens');
+    btnPreview.textContent = 'Preview';
+
+    var btnGitHub = document.createElement('button');
+    btnGitHub.type = 'button';
+    btnGitHub.classList.add('btnItens');
+    btnGitHub.textContent = 'GitHub';
+
     item.appendChild(btnDiv);
-    
-    btnDiv.appendChild(btnPreview);
-    btnDiv.appendChild(btnGitHub);
 
     // Se o link de preview existir, adiciona o link ao botão
     if (data.itens[i] && data.itens[i].linkPreview) {
+        // Cria o botão de preview
+        btnDiv.appendChild(btnPreview);
         btnPreview.addEventListener('click', createClickHandler(data.itens[i].linkPreview));
     }
 
     // Se o link do GitHub existir, adiciona o link ao botão
     if (data.itens[i] && data.itens[i].linkGitHub) {
+        // Cria o botão de GitHub
+        btnDiv.appendChild(btnGitHub);
         btnGitHub.addEventListener('click', createClickHandler(data.itens[i].linkGitHub));
     }
 
@@ -119,7 +121,5 @@ function createMouseoverHandler(i) {
         } else {
             aside.style.backgroundImage = '';
         }
-
-        document.head.appendChild(style);
     };
 }

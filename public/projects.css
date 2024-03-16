@@ -90,11 +90,13 @@
     color: rgb(201, 201, 201);
     background-color: #6a08ac;
     border-style: none;
-    font-size: large;
+    font-size: 16px;
     padding: 3px;
     margin: 5px;
     flex-grow: 1;
     visibility: hidden;
+    box-shadow: 0 0 10px #0000007c;
+    border: #6b6b6bc2 2px solid;
 }
 
 .btnItens:hover {
